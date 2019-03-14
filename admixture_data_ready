@@ -1,1 +1,13 @@
+# using R code
+# the snpset2 extracted from the filtered dataset using SNPrelate 
+snpset2.id <- unlist(snpset2)
+snplist <- snpgdsSNPList(genofile)
+snplists<-snplist$rs.id[snpset2.id]
+snplists<-data.frame(snplists)
+write.table(snplists,"/bulk/zhenbin/sorghum_adaptation/ADMIXTURE/snplists",row.names=F,quote=F,col.names=F)
 
+
+# after got the snp id, the SNP data was filtered using vcftools
+cd /bulk/zhenbin/sorghum_adaptation/ADMIXTURE/
+vcftools="/homes/zhenbin/vcftools/bin/vcftools"
+$vcftools --vcf /bulk/zhenbin/sorghum_adaptation/origin_data/SNP_2735.recode.vcf --snps snplists --recode --recode-INFO-all --out SNP
