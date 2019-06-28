@@ -26,4 +26,3 @@ for (i in 2:dim(e_data)[2]){
 }
 
 
-geo_data<-read.csv("/bulk/zhenbin/sorghum_adaptation/IBD/ind_geo.csv",header=T)
