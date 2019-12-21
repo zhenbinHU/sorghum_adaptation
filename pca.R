@@ -1,8 +1,6 @@
 library(SNPRelate)
 
 vcf.fn <- "/bulk/zhenbin/sorghum_adaptation/origin_data/SNP_2735.recode.vcf"
-scp zhenbin@beocat.cis.ksu.edu:/bulk/zhenbin/sorghum_adaptation/origin_data/SNP_2735.recode.vcf /home/zhenbin/
-vcf.fn <- "/home/zhenbin/sorghum_adaptation/sorghum_adaptation/origin_data/SNP_2735.recode.vcf"
 snpgdsVCF2GDS(vcf.fn, "pca.gds", method="biallelic.only")
 genofile <- snpgdsOpen("pca.gds")
 
